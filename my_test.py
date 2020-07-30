@@ -15,25 +15,24 @@ service_funnel.scrape_html(html_string)
 
 def test_valid_tags_with_snippet():
 	result = service_funnel.handle_request(
-            {"selected_tags": [{"name": "A"}, {"name": "B"}, {"name": "C"}]}       ### when tags are valid
-        )																		   ### nextags shows further combination of valid tags
-	return result																   ### nextag will be empty when no combination possible
+            {"selected_tags": [{"name": "A"}, {"name": "B"}, {"name": "C"}]}       
+	return result												
 
 def test_invalid_tags():
 	result = service_funnel.handle_request(
-            {"selected_tags": [{"name": "W"}, {"name": "T"}, {"name": "R"}]}	   ### when tags are completely invalid
+            {"selected_tags": [{"name": "W"}, {"name": "T"}, {"name": "R"}]}	   
         )
 	return result
 
 def test_valid_tags_without_snippet():
 	result = service_funnel.handle_request(
-            {"selected_tags": [{"name": "A"}, {"name": "B"}]}					    ###  when tags are valid but not exact match
-        )																			###  nextags prediction given
+            {"selected_tags": [{"name": "A"}, {"name": "B"}]}					    
+        )													
 	return result
 
 def test_valid_tags_without_snippet_onematch():
-	result = service_funnel.handle_request(											###  when tags are valid with only 1 snippet
-            {"selected_tags": [{"name": "X"}, {"name": "C"}, {"name": "D"}]}		###  snippet is shown for the probable match
+	result = service_funnel.handle_request(						
+            {"selected_tags": [{"name": "X"}, {"name": "C"}, {"name": "D"}]}		
         )
 	return result
 
