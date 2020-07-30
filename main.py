@@ -6,7 +6,7 @@ class ServiceFunnel:
       self.mydict = {}    # dictionary for storing snippets with tags as key after scraping
                           # called on the API for checking match
         
-####################--------------SCRAPING METHOD------------####################
+####################--------------SCRAPING METHOD------------###################
     def scrape_html(self, html: str):
       
       mylist = html.split('article>')  ###---split for snippet separation---###
@@ -22,10 +22,10 @@ class ServiceFunnel:
           self.mydict.update({j : mylist[i] + 'article>'})  # update mydict
           
       return self.mydict
-########################-----------END-------------------##########################  
+########################-----------END-------------------#########################  
 
 
-#######################---------API FUNCTIONALITY--------##########################
+#######################---------API FUNCTIONALITY--------#########################
     def handle_request(self,request: dict) -> dict:
 
 # create tap tuple of request to check with mydict
