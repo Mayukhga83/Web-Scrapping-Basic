@@ -1,2 +1,2 @@
-# Web-Scrapping-Basic
+# Scrapping HTML Content
 HTML string based web scrapping 
